@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<div claas="row">
+    <div class="col-sn-8 offset-2">
+        <h4 class="alert alert-info">Update info here</h4>
+        <td>
+        <form action="" method="POST">
+            {%csrf_token%}
+            {{objdict}}
+            
+            <input type="submit" name="Update"> 
+            <a href="{% url 'addone'%}" class="btn btn-warning btn-sm">Back</a>
+            
+        </form>
+        
+    </td>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content%}

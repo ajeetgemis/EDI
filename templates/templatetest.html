@@ -1,0 +1,27 @@
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">AsnNumber</th>
+        <th scope="col">GSDB</th>
+        <th scope="col">Supplier</th>
+        <th scope="col">DateTime</th>
+        <th scope="col">PackingList No</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for st in retrivevalue%}             
+<tr>
+  <th scope="row">{{st.id}}</th>                    
+  <td>{{st.asnnumber}}</td>
+  <td>{{st.gsdb}}</td>
+  <td>{{st.supplier}}</td>
+  <td>{{st.date}}</td>
+  <td>{{st.pknumber}}</td>
+
+</tr>
+
+
+{%endfor%}

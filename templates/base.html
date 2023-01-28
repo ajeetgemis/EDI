@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        {%block sheet%}
+        <link rel="stylesheet" href="{% static 'crud/css/bootstrap.css' %}"
+        {%endblock sheet%}
+    </head>
+<body>
+    <div class="container mt-1">
+        <h2 class="text-center alert alert-danger">FORD ASN  DASHBOARD</h2>
+        {% block content%}
+        {% endblock content%}
+
+        <script src="{% static 'crud/js/bootstrap.js'%}"></script>
+        <script src="{% static 'crud/js/pooper.js'%}"></script>
+        <script src="{% static 'crud/js/jquery.js'%}"></script>
+        
+      
+        
+       
+        
+    </div>        
+           <!--  <h1>Forms</h1>
+             {{st}}
+             <th scope="row">{{st.id}}</th>
+             <h1>table form</h1>
+             {{st.as_table}}
+             <h1>ul tag form</h1>
+             {{st.as_ul}}
+             <h1>Forms of name field</h1>
+             {{st.name_of_field}}-->
+             
+            
+             
+        
+        </body>
+        </html>        

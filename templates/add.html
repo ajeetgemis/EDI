@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        {%block sheet%}
+        <link rel="stylesheet" href="{% static 'crud/css/bootstrap.css' %}"
+        {%endblock sheet%}
+    </head>
+<body>
+    <div class="container mt-1">
+        <h2 class="text-center alert alert-danger"> Ford ASN DASHBOARD  </h2>
+        {% block content%}
+        {% endblock content%}
+        <form action="" method="POST">
+            {% csrf_token %}                              
+            {{value}}
+            <input type="submit" name="submit">  
+          </form>
+        
+         <table class="table table-success table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">AsnNumber</th>
+                    <th scope="col">GSDB</th>
+                    <th scope="col">Supplier</th>
+                    <th scope="col">DateTimeValue</th>
+                    <th scope="col">PackingList No</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for st in retrivevalue%}
+                
+                  <tr>
+                    <th scope="row">{{st.id}}</th>                    
+                    <td>{{st.asnnumber}}</td>
+                    <td>{{st.gsdb}}</td>
+                    <td>{{st.supplier}}</td>
+                    <td>{{st.date}}</td>
+                    <td>{{st.pknumber}}</td>
+                    <td><a href="{% url 'editone' st.id %}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="{% url 'deleteone' st.id %}" class="d-inline" method="post">
+                            {% csrf_token %}
+                          <input type='submit' class='btn btn-danger' value="Delete">
+                        </form>
+                    </td>
+                  </tr>
+                {%endfor%}
+                  
+                  
+                </tbody>
+              </table>
+            
+             
+                
+                     
+    </div>
+    
+
+<script src="{% static 'crud/js/bootstrap.js'%}"></script>
+<script src="{% static 'crud/js/pooper.js'%}"></script>
+<script src="{% static 'crud/js/jquery.js'%}"></script>
+
+<title>
+My First Heading
+</title>
+
+{{st.asnnumber}}
+
+     
+   <!--  <h1>Forms</h1>
+     {{st}}
+     <th scope="row">{{st.id}}</th>
+     <h1>table form</h1>
+     {{st.as_table}}
+     <h1>ul tag form</h1>
+     {{st.as_ul}}
+     <h1>Forms of name field</h1>
+     {{st.name_of_field}}-->
+     
+    
+     
+
+</body>
+</html>
